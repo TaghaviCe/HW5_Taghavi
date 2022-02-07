@@ -2,11 +2,10 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 fun <T>List<T>.splitArray(list: List<T>){
-
     val list2= arrayListOf<T>()
     println("Enter your number of slice:")
-    var input=Scanner(System.`in`)
-    var number=input.nextInt()
+    val input=Scanner(System.`in`)
+    val number=input.nextInt()
     var j=0
     for (i in 0 until list.size) {
         val c = list.slice(j..j+number)
