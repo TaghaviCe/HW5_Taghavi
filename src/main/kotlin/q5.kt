@@ -1,7 +1,7 @@
 import java.util.*
 import kotlin.collections.ArrayList
 
-fun <T>List<T>.splitArray(list: ArrayList<T>){
+fun <T>List<T>.splitArray(list: List<T>){
 
     val list2= arrayListOf<T>()
     println("Enter your number of slice:")
@@ -26,11 +26,11 @@ fun <T>List<T>.splitArray(list: ArrayList<T>){
 
 
 fun main(){
-    val list= arrayListOf("a","b","c","d","e","f","g")
+    val list= listOf("a","b","c","d","e","f","g")
 
     list.splitArray(list)
 
-    val list2= arrayListOf(1,2,3,4,5)
+    val list2= listOf(1,2,3,4,5)
 
     list2.splitArray(list2)
 }
