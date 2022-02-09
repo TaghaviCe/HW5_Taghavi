@@ -1,8 +1,9 @@
 interface Vehicle{
 
-    abstract val capacity: Int
+    abstract val maxCapacity: Int
     abstract val name: Transportation
     abstract val maxSpead: Long
+
 }
 interface PublicTrasportationVehicle:Vehicle{
     fun MaxSpeed()
@@ -17,71 +18,91 @@ interface PrivateTrasportationVehicle:Vehicle{
     fun MaxCapacity()
 
 }
- class Van(override var maxSpead:Long,override var capacity:Int,override var name:Transportation):PrivateTrasportationVehicle{
-     override fun MaxSpeed() {
-
+ class Van(override var maxSpead:Long,override var maxCapacity:Int,override var name:Transportation):PrivateTrasportationVehicle{
+     var maxSpeedVan:Long=0
+     var maxCapacityVan:Int=0
+     override fun MaxSpeed(){
+        maxSpeedVan=maxSpead
      }
 
      override fun MaxCapacity() {
-
+          maxCapacityVan=maxCapacity
      }
 
  }
 
-class SportCar(override var maxSpead:Long, override var capacity:Int,override var name:Transportation):PrivateTrasportationVehicle{
+class SportCar(override var maxSpead:Long, override var maxCapacity:Int,override var name:Transportation):PrivateTrasportationVehicle{
+    var maxSpeedSportCar:Long=0
+    var maxCapacityVanSportCar:Int=0
     override fun MaxSpeed() {
-
+      maxSpeedSportCar=maxSpead
     }
 
     override fun MaxCapacity() {
-
+    maxCapacityVanSportCar=maxCapacity
     }
 
 }
 
 
-class Truck(override var maxSpead:Long,override var capacity:Int,override var name:Transportation):ServiceTrasportationVehicle{
+class Truck(override var maxSpead:Long,override var maxCapacity :Int,override var name:Transportation):ServiceTrasportationVehicle{
+    var maxSpeedTruck:Long=0
+    var maxCapacityTruck:Int=0
     override fun MaxSpeed() {
-
+     maxSpeedTruck=maxSpead
     }
 
     override fun MaxCapacity() {
+     maxCapacityTruck=maxCapacity
+    }
+
+}
+class Ambulance(override var maxSpead:Long,override var maxCapacity:Int,override var name:Transportation):ServiceTrasportationVehicle{
+    var maxSpeedAmbulance:Long=0
+    var maxCapacityAmbulance:Int=0
+    override fun MaxSpeed() {
+       maxSpeedAmbulance=maxSpead
+    }
+
+    override fun MaxCapacity() {
+      maxCapacityAmbulance=maxCapacity
+    }
+
+}
+class Subway(override var maxSpead:Long, override var maxCapacity:Int,override var name:Transportation):PublicTrasportationVehicle{
+    var maxSpeedSubway:Long=0
+    var maxCapacitySubway:Int=0
+    override fun MaxSpeed() {
+        maxSpeedSubway=maxSpead
+    }
+
+    override fun MaxCapacity() {
+        maxCapacitySubway=maxCapacity
+    }
+
+}
+class Taxi(override var maxSpead:Long, override var maxCapacity:Int,override var name:Transportation):PublicTrasportationVehicle{
+    var maxSpeedTaxi:Long=0
+    var maxCapacityTaxi:Int=0
+    override fun MaxSpeed() {
+        maxSpeedTaxi=maxSpead
+    }
+
+    override fun MaxCapacity() {
+        maxCapacityTaxi=maxCapacity
 
     }
 
 }
-class Ambulance(override var maxSpead:Long,override var capacity:Int,override var name:Transportation):ServiceTrasportationVehicle{
+class Bus(override var maxSpead:Long,override var maxCapacity:Int,override var name:Transportation):PublicTrasportationVehicle{
+    var maxSpeedBus:Long=0
+    var maxCapacityBus:Int=0
     override fun MaxSpeed() {
-
+        maxSpeedBus=maxSpead
     }
 
     override fun MaxCapacity() {
-
-    }
-
-}
-class Subway(override var maxSpead:Long, override var capacity:Int,override var name:Transportation):PublicTrasportationVehicle{
-    override fun MaxSpeed() {
-    }
-
-    override fun MaxCapacity() {
-    }
-
-}
-class Taxi(override var maxSpead:Long, override var capacity:Int,override var name:Transportation):PublicTrasportationVehicle{
-    override fun MaxSpeed() {
-    }
-
-    override fun MaxCapacity() {
-
-    }
-
-}
-class Bus(override var maxSpead:Long,override var capacity:Int,override var name:Transportation):PublicTrasportationVehicle{
-    override fun MaxSpeed() {
-    }
-
-    override fun MaxCapacity() {
+        maxCapacityBus=maxCapacity
 
     }
 
@@ -183,7 +204,7 @@ fun main(){
     while(swap1){
         swap1 = false
         for(i in 0 until listVehicle.size-1){
-            if(listVehicle[i].capacity >listVehicle[i+1].capacity){
+            if(listVehicle[i].maxCapacity >listVehicle[i+1].maxCapacity){
                 val temp = listVehicle[i]
                 listVehicle[i] = listVehicle[i+1]
                 listVehicle[i + 1] = temp
@@ -193,7 +214,7 @@ fun main(){
         }
     }
     for (i in 0 until listVehicle.size){
-        println("${listVehicle[i].name} with ${listVehicle[i].capacity} capacity")
+        println("${listVehicle[i].name} with ${listVehicle[i].maxCapacity} capacity")
     }
 
 }
