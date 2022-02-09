@@ -199,7 +199,7 @@ fun main(){
     for (i in 0 until listVehicle.size){
         println("${listVehicle[i].name}  with ${listVehicle[i].maxSpead} max speed")
     }
-    println("------Sort by minimum speed------")
+    println("------Sort by minimum capacity------")
     var swap1 = true
     while(swap1){
         swap1 = false
