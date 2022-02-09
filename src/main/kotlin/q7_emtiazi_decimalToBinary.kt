@@ -33,12 +33,14 @@ fun main() {
     try {
         println("Enter Decimal Number  :")
         val input = Scanner(System.`in`)
-        val decimalNumber = input.nextInt()
+        val decimalString= readLine().toString()
+        val decimalNumber = decimalString.toInt()
         val binaryNumber = getBinaryNumber(decimalNumber)
         println("Binary Number : $binaryNumber")
 
-        println("Enter Binary Number :")
-        val binary = input.nextLong()
+        println("Enter Binary Number 0 OR 1 :")
+        val binaryString= readLine().toString()
+        val binary = binaryString.toLong()
         val decimal = getDecimalNumber(binary)
         println("Decimal Number : $decimal")
     }catch (e:Exception){
