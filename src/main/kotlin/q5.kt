@@ -7,7 +7,7 @@ fun <T>List<T>.splitArray(list: List<T>){
     val input=Scanner(System.`in`)
     val number=input.nextInt()
     var j=0
-    for (i in 0 until list.size) {
+
         val c = list.slice(j..j+number)
         println(c)
         j+=number
@@ -16,10 +16,10 @@ fun <T>List<T>.splitArray(list: List<T>){
                 list2+=list[k]
             }
             println(list2)
-            break
+
         }
 
-    }
+
 
 }
 
