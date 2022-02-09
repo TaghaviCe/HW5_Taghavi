@@ -37,7 +37,6 @@ fun main() {
         val decimalNumber = decimalString.toInt()
         val binaryNumber = getBinaryNumber(decimalNumber)
         println("Binary Number : $binaryNumber")
-
         println("Enter Binary Number 0 OR 1 :")
         val binaryString= readLine().toString()
         val binary = binaryString.toLong()
