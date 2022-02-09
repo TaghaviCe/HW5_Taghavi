@@ -32,7 +32,6 @@ fun getDecimalNumber(binaryNumber: Long): Int {
 fun main() {
     try {
         println("Enter Decimal Number  :")
-        val input = Scanner(System.`in`)
         val decimalString= readLine().toString()
         val decimalNumber = decimalString.toInt()
         val binaryNumber = getBinaryNumber(decimalNumber)
